@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+
+metadata:
+  name: hospital-app-rs
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: hospital-app-rs
+
+  template:
+
+    metadata:
+      labels:
+        app: hospital-app-rs
+
+    spec:
+
+      containers:
+
+      - name: hospital-app-container
+
+        image: mohitdocker241/hospital-app:v1
+
+        ports:
+          - containerPort: 5000

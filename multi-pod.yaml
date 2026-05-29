@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: hospital-multi-pod
+
+spec:
+
+  containers:
+
+  - name: hospital-app-container
+
+    image: mohitdocker241/hospital-app:v1
+
+    ports:
+      - containerPort: 5000
+
+  - name: nginx-container
+
+    image: nginx
+
+    ports:
+      - containerPort: 80
